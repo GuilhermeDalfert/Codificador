@@ -1,12 +1,12 @@
 import java.time.LocalDate;
 
-public class CodificadorSimples implements Codificador {
+public class Codificador2 implements Codificador {
     public String getNome() {
         return "Codificador Simples";
     }
 
     public LocalDate getDataCriacao() {
-        return LocalDate.of(2025, 03, 13);
+        return LocalDate.of(2025, 04, 13);
     }
 
     public int getNivelSeguranca(){
@@ -17,7 +17,7 @@ public class CodificadorSimples implements Codificador {
         StringBuilder encoded = new StringBuilder();
 
         for (char c : str.toCharArray()) {
-            encoded.append((char) (c + 1));
+            encoded.append((char) (c*c));
         }
 
         return encoded.toString();
@@ -27,7 +27,7 @@ public class CodificadorSimples implements Codificador {
         StringBuilder encoded = new StringBuilder();
         
         for (char c : str.toCharArray()) {
-            encoded.append((char) (c - 1));
+            encoded.append((char) Math.sqrt(c));
         }
         
         return encoded.toString();
